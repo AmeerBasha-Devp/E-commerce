@@ -1,4 +1,38 @@
-// JavaScript code for payment form validation and submission
+document.querySelectorAll('input[name="payment-method"]').forEach((elem) => {
+    elem.addEventListener('change', function(event) {
+        const selectedMethod = event.target.value;
+        const upiField = document.getElementById('upi-id'); // Assuming this field exists
+        const bankField = document.getElementById('bank-details'); // Assuming this field exists
+        const cardholderField = document.getElementById('cardholder-name');
+        const cardNumberField = document.getElementById('card-number');
+        const expirationField = document.getElementById('expiration-date');
+        const cvvField = document.getElementById('cvv');
+
+        // Hide all payment input fields initially
+        cardholderField.style.display = 'none';
+        cardNumberField.style.display = 'none';
+        expirationField.style.display = 'none';
+        cvvField.style.display = 'none';
+
+
+        // Hide all fields initially
+        upiField.style.display = 'none';
+        bankField.style.display = 'none';
+
+        // Show relevant fields based on selected payment method and hide others
+
+        if (selectedMethod === 'upi') {
+            upiField.style.display = 'block';
+        } else if (selectedMethod === 'net-banking') {
+            // Show bank details input fields
+
+            bankField.style.display = 'block';
+        }
+    });
+});
+
+// Existing validation code
+
 
 document.getElementById('payment-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission

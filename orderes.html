@@ -4,162 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-            animation: slideUp 0.8s ease-in-out;
-        }
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        h2 {
-            color: #333;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
-        select, input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .product-image {
-            width: 100%;
-            height: auto;
-            max-height: 200px;
-            margin-top: 15px;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        .buttons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        .back {
-            background-color: #6c757d;
-            color: white;
-        }
-        .next {
-            background-color: #007bff;
-            color: white;
-        }
-        .place-order {
-            background-color: #28a745;
-            color: white;
-            width: 100%;
-            margin-top: 15px;
-        }
-        .proceed-payment {
-            background-color: #ffc107;
-            color: white;
-            width: 100%;
-            margin-top: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="orders.css">
 </head>
 <body>
     <div class="container">
-        <h2>Order Your Product</h2>
-        <form id="orderForm">
-            <label for="product">Select Product:</label>
-            <select id="product" name="product" onchange="updateProductImage()">
-                <option value="item1" data-img="item1.jpg">Item 1</option>
-                <option value="item2" data-img="item2.jpg">Item 2</option>
-                <option value="item3" data-img="item3.jpg">Item 3</option>
-            </select>
-            
-            <img id="productImage" src="item1.jpg" alt="Product Image" class="product-image">
-            
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" value="1">
-            
-            <label for="address">Shipping Address:</label>
-            <textarea id="address" name="address" rows="3" placeholder="Enter your address"></textarea>
-            
-            <label for="shipping">Shipping Method:</label>
-            <select id="shipping" name="shipping">
-                <option value="standard">Standard Shipping</option>
-                <option value="express">Express Shipping</option>
-            </select>
-            
-            <div class="buttons">
-                <button type="button" class="back" onclick="goBack()">Back</button>
-                <button type="button" class="next" onclick="goNext()">Next</button>
+        <h2>Delivery Address</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
-            <button type="button" class="place-order" onclick="placeOrder()">Place Order</button>
-            <button type="button" class="proceed-payment" onclick="proceedToPayment()">Proceed to Payment</button>
+            <div class="form-group">
+                <label for="Phone">Phone No</label>
+                <input type="number" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country/Region</label>
+                <select id="country" name="country" class="select-padding" required>
+
+                    <option value="">Select a country</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="UK">UK</option>
+                    <option value="India">India</option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <select id="state" name="state" class="select-padding" required>
+
+                    <option value="">Select a state</option>
+                    <option value="California">California</option>
+                    <option value="Texas">Texas</option>
+                    <option value="New York">New York</option>
+                    <option value="Florida">Florida</option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="pincode">pincode</label>
+                <input type="pincode" id="pincode" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="city/town">City/village</label>
+                <input type="city/town" id="city/town" name="city/town" required>
+            </div>
+            <div class="form-group">
+                <label for="street">Street/H.no</label>
+                <input type="street" id="street" name="street" required>
+            </div>
+            <p>Step 1/3</p>
+            <div class="button-group">
+                <button type="button" class="back" onclick="window.location.href='shop.html'">Go Back</button>
+                <button type="button" class="btn" onclick="window.location.href='payment.html'">Next</button>
+
+
+            </div>
+
+            
         </form>
     </div>
 
-    <script>
-        function updateProductImage() {
-            let productSelect = document.getElementById("product");
-            let selectedOption = productSelect.options[productSelect.selectedIndex];
-            let imageUrl = selectedOption.getAttribute("data-img");
-            document.getElementById("productImage").src = imageUrl;
-        }
-        
-        function goBack() {
-            alert("Going back to the previous step!");
-        }
-        function goNext() {
-            alert("Proceeding to the next step!");
-        }
-        function placeOrder() {
-            let product = document.getElementById("product").value;
-            let quantity = document.getElementById("quantity").value;
-            let address = document.getElementById("address").value;
-            let shipping = document.getElementById("shipping").value;
-            
-            if (!address.trim()) {
-                alert("Please enter your shipping address.");
-                return;
-            }
-            
-            alert("Order placed successfully!\n\nProduct: " + product + "\nQuantity: " + quantity + "\nShipping Address: " + address + "\nShipping Method: " + shipping);
-        }
-        function proceedToPayment() {
-            window.location.href = 'payment.html';
-        }
-    </script>
 </body>
 </html>

@@ -9,6 +9,24 @@
 <body>
     <h1>Payment Gateway</h1>
     <form id="payment-form">
+        <h2>Payment Methods</h2>
+        <div>
+            <input type="radio" id="cash-on-delivery" name="payment-method" value="cash" required>
+            <label for="cash-on-delivery">Cash On Delivery</label>
+        </div>
+        <div>
+            <input type="radio" id="upi" name="payment-method" value="upi" required>
+            <label for="upi">UPI</label>
+        </div>
+        <div>
+            <input type="radio" id="net-banking" name="payment-method" value="net-banking" required>
+            <label for="net-banking">Net Banking</label>
+        </div>
+
+
+
+
+
         <label for="cardholder-name">Cardholder Name:</label>
         <input type="text" id="cardholder-name" name="cardholder-name" required>
 

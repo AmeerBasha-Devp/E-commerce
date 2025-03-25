@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+p{
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-align: right;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-group input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+.btn {
+    margin: 0 10px; /* Adjusted margin for spacing */
+    width: 25%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.back {
+    margin: 0 10px; /* Adjusted margin for spacing */
+    width: 25%;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.button-group {
+    display: flex; /* Ensures buttons are on the same row */
+    justify-content: space-between; /* Adds space between buttons */
+}
+.btn:hover {
+    background-color: #006eff;
+}
+.error {
+    color: red;
+    font-size: 14px;
+}
