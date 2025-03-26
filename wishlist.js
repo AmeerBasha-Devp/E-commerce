@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const wishlistButtons = document.querySelectorAll('.wishlist');
+
+    wishlistButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productName = this.getAttribute('data-name');
+            const productPrice = this.getAttribute('data-price');
+            const product = { name: productName, price: productPrice };
+            
+            wishlist.push(product);
+            localStorage.setItem("wishlist", JSON.stringify(wishlist));
+            displayWishlist();
+        });
+    });
+
     const wishlistItems = document.getElementById("wishlist-items");
     let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
